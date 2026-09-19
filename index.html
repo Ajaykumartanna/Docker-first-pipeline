@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unisex Beauty Parlor · Luxe & Blade</title>
+  <!-- Google Fonts & Font Awesome for clean typography and icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #faf7f2;
+      color: #1e1e1e;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* Interactive UI with subtle transitions, hover effects, and a clean unisex palette */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header & nav */
+    header {
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(4px);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #2b2b2b 0%, #5a4a3a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .logo i {
+      background: none;
+      -webkit-text-fill-color: #b89b7b;
+      margin-right: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #2e2e2e;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: #b89b7b;
+      color: #000;
+    }
+
+    .btn-outline {
+      border: 1.5px solid #2b2b2b;
+      background: transparent;
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      color: #2b2b2b;
+      font-size: 0.95rem;
+    }
+
+    .btn-outline:hover {
+      background: #2b2b2b;
+      color: white;
+      transform: scale(1.02);
+      box-shadow: 0 10px 20px -8px rgba(0,0,0,0.2);
+    }
+
+    .btn-solid {
+      background: #2b2b2b;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-size: 1rem;
+      box-shadow: 0 8px 18px -8px rgba(0,0,0,0.25);
+    }
+
+    .btn-solid:hover {
+      background: #b89b7b;
+      transform: translateY(-3px);
+      box-shadow: 0 18px 25px -10px rgba(184, 155, 123, 0.4);
+    }
+
+    /* hero section */
+    .hero {
+      padding: 60px 0 70px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-content {
+      flex: 1.2;
+      min-width: 300px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: #ede8e2;
+      color: #4e3e2e;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 8px 18px;
+      border-radius: 50px;
+      letter-spacing: 0.3px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(4px);
+    }
+
+    .hero h1 {
+      font-size: 3.4rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      color: #1e1e1e;
+    }
+
+    .hero h1 span {
+      color: #b89b7b;
+      border-bottom: 4px solid #b89b7b;
+      border-bottom-style: wavy;
+      border-bottom-width: 2px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #4d4d4d;
+      margin-bottom: 36px;
+      max-width: 540px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .hero-image {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 460px;
+      border-radius: 40px 40px 40px 12px;
+      box-shadow: 0 40px 50px -25px rgba(0,0,0,0.25);
+      object-fit: cover;
+      transition: all 0.4s ease;
+    }
+
+    .hero-image img:hover {
+      transform: scale(1.01) rotate(0.5deg);
+      box-shadow: 0 50px 60px -28px rgba(0,0,0,0.3);
+    }
+
+    .floating-tag {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      background: white;
+      padding: 12px 24px;
+      border-radius: 50px;
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.7);
+      transition: all 0.3s ease;
+    }
+
+    .floating-tag i {
+      color: #b89b7b;
+      font-size: 1.2rem;
+    }
+
+    /* interactive stats / counter */
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      padding: 50px 0;
+      background: #f3efe9;
+      border-radius: 80px 20px 80px 20px;
+      margin: 40px 0 20px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .stat-item {
+      text-align: center;
+      min-width: 130px;
+      cursor: default;
+      transition: transform 0.2s;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #2b2b2b;
+      display: block;
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      color: #5e5e5e;
+      font-weight: 500;
+    }
+
+    /* services section */
+    .section-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin: 70px 0 20px;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .section-title i {
+      color: #b89b7b;
+      font-size: 2rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin: 40px 0 30px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 32px 26px;
+      border-radius: 28px;
+      box-shadow: 0 10px 25px -8px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.02);
+      cursor: default;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 40px -15px rgba(184, 155, 123, 0.25);
+      border-color: #e7ddd0;
+    }
+
+    .service-icon {
+      font-size: 2.2rem;
+      color: #b89b7b;
+      margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #1e1e1e;
+    }
+
+    .service-card p {
+      color: #5a5a5a;
+      font-size: 0.98rem;
+      margin-bottom: 18px;
+      min-height: 3em;
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #1e1e1e;
+      letter-spacing: -0.01em;
+    }
+
+    .price i {
+      color: #b89b7b;
+      font-weight: 400;
+      font-size: 0.9rem;
+      margin-left: 6px;
+    }
+
+    /* interactive booking ribbon */
+    .booking-ribbon {
+      background: #1e1e1e;
+      color: white;
+      padding: 30px 40px;
+      border-radius: 100px;
+      margin: 50px 0 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      transition: all 0.3s;
+    }
+
+    .booking-ribbon p {
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    .booking-ribbon .btn-solid {
+      background: white;
+      color: #1e1e1e;
+      box-shadow: none;
+    }
+
+    .booking-ribbon .btn-solid:hover {
+      background: #b89b7b;
+      color: white;
+    }
+
+    /* interactive hover cards for team / testimonials */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+      margin: 50px 0 30px;
+    }
+
+    .testimonial-card {
+      background: #ffffffd9;
+      backdrop-filter: blur(4px);
+      padding: 30px;
+      border-radius: 30px;
+      border: 1px solid #f0e8e0;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 18px -8px rgba(0,0,0,0.03);
+    }
+
+    .testimonial-card:hover {
+      background: #ffffff;
+      border-color: #b89b7b;
+      transform: scale(1.02);
+    }
+
+    .testimonial-card i {
+      color: #b89b7b;
+      font-size: 1.8rem;
+      opacity: 0.7;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      font-weight: 400;
+      color: #333;
+      margin-bottom: 18px;
+    }
+
+    .client {
+      font-weight: 600;
+      color: #1e1e1e;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .client i {
+      font-size: 1.4rem;
+      color: #b89b7b;
+      opacity: 1;
+    }
+
+    /* footer */
+    footer {
+      background: #ffffff;
+      padding: 50px 0 30px;
+      border-radius: 60px 60px 0 0;
+      margin-top: 60px;
+      box-shadow: 0 -10px 30px -15px rgba(0,0,0,0.05);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #2b2b2b, #7f6b57);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 14px;
+    }
+
+    .footer-brand p {
+      color: #5b5b5b;
+      max-width: 300px;
+    }
+
+    .footer-links h4 {
+      margin-bottom: 18px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: #4a4a4a;
+      text-decoration: none;
+      transition: color 0.2s;
+      font-size: 0.98rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-links a:hover {
+      color: #b89b7b;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 18px;
+      font-size: 1.5rem;
+      color: #4a4a4a;
+      margin-top: 16px;
+    }
+
+    .social-icons a {
+      color: inherit;
+      transition: all 0.2s;
+    }
+
+    .social-icons a:hover {
+      color: #b89b7b;
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 28px;
+      border-top: 1px solid #eeeae4;
+      color: #7a7a7a;
+      font-size: 0.9rem;
+    }
+
+    /* responsive */
+    @media (max-width: 800px) {
+      .hero h1 {
+        font-size: 2.6rem;
+      }
+      nav {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .nav-links {
+        gap: 22px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .booking-ribbon {
+        border-radius: 40px;
+        padding: 30px;
+        text-align: center;
+        justify-content: center;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+      .stats {
+        border-radius: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+      .btn-outline, .btn-solid {
+        padding: 10px 22px;
+      }
+      .floating-tag {
+        position: static;
+        margin-top: 20px;
+        width: fit-content;
+      }
+      .hero-image img {
+        border-radius: 30px;
+      }
+    }
+
+    /* micro-interaction: pulse on interactive elements */
+    @keyframes softPulse {
+      0% { box-shadow: 0 0 0 0 rgba(184, 155, 123, 0.3); }
+      70% { box-shadow: 0 0 0 12px rgba(184, 155, 123, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(184, 155, 123, 0); }
+    }
+
+    .pulse-on-hover:hover {
+      animation: softPulse 1.2s infinite;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <i class="fas fa-cut"></i> Luxe&Blade
+        </div>
+        <ul class="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><button class="btn-outline" onclick="alert('📅 Booking interface: our team will contact you shortly!')">Book now</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero section -->
+    <div class="container hero">
+      <div class="hero-content">
+        <span class="hero-badge"><i class="fas fa-venus-mars" style="margin-right: 6px;"></i> Unisex · All welcome</span>
+        <h1>Where style <span>has no gender</span></h1>
+        <p>Precision cuts, luxurious grooming, and beauty treatments for everyone. Step into a space designed for all.</p>
+        <div class="hero-buttons">
+          <button class="btn-solid pulse-on-hover" onclick="alert('✨ Welcome! Our booking concierge will assist you.')">Book appointment <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></button>
+          <button class="btn-outline" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">View services</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern unisex beauty parlor interior with styling chairs" loading="lazy">
+        <div class="floating-tag">
+          <i class="fas fa-star"></i> 4.9 · 2.3k reviews
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive stats counter (hover effect) -->
+    <div class="container">
+      <div class="stats">
+        <div class="stat-item">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">Expert stylists</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">50k</span>
+          <span class="stat-label">Happy clients</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">4.9</span>
+          <span class="stat-label">Average rating</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">12</span>
+          <span class="stat-label">Signature services</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="container" id="services">
+      <div class="section-title">
+        <i class="fas fa-spa"></i> Services for everyone
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-cut"></i></div>
+          <h3>Precision haircut</h3>
+          <p>Tailored to your face shape, hair texture & personal style — no gender labels.</p>
+          <div class="price">$45 <i>onwards</i></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+          <h3>Color & highlights</h3>
+          <p>Balayage, global color, or creative fashion shades using vegan formulas.</p>
+          <div class="price">$85 <i>onwards</i></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-hand-sparkles"></i></div>
+          <h3>Manicure & pedicure</h3>
+          <p>Luxury nail care with sterilized tools, gel, and classic options.</p>
+          <div class="price">$35 <i>onwards</i></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-face-smile"></i></div>
+          <h3>Facials & skincare</h3>
+          <p>Customized treatments for all skin types — glow, hydration, anti-aging.</p>
+          <div class="price">$60 <i>onwards</i></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- interactive booking ribbon (clickable) -->
+    <div class="container">
+      <div class="booking-ribbon">
+        <p><i class="fas fa-calendar-check" style="margin-right: 12px; color: #b89b7b;"></i> Ready for a fresh look? Book in 30 seconds.</p>
+        <button class="btn-solid" onclick="alert('📞 Our booking line: (555) 123-4567 — or click to schedule online!')">Book your visit</button>
+      </div>
+    </div>
+
+    <!-- Experience / Why choose us (interactive cards) -->
+    <div class="container" id="experience">
+      <div class="section-title">
+        <i class="fas fa-gem"></i> The Luxe&Blade experience
+      </div>
+      <div class="services-grid">
+        <div class="service-card" style="background: #f9f6f2;">
+          <div class="service-icon"><i class="fas fa-rainbow"></i></div>
+          <h3>Inclusive by design</h3>
+          <p>From the moment you step in, our space and services are built for all identities.</p>
+        </div>
+        <div class="service-card" style="background: #f9f6f2;">
+          <div class="service-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Clean & conscious</h3>
+          <p>Vegan products, cruelty-free brands, and low-waste salon practices.</p>
+        </div>
+        <div class="service-card" style="background: #f9f6f2;">
+          <div class="service-icon"><i class="fas fa-clock"></i></div>
+          <h3>Flexible scheduling</h3>
+          <p>Early mornings, late evenings, and weekend availability — online booking 24/7.</p>
+        </div>
+        <div class="service-card" style="background: #f9f6f2;">
+          <div class="service-icon"><i class="fas fa-couch"></i></div>
+          <h3>Relaxing lounge</h3>
+          <p>Complimentary beverages, Wi-Fi, and a calm atmosphere while you wait.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials (interactive hover) -->
+    <div class="container" id="testimonials">
+      <div class="section-title">
+        <i class="fas fa-comment-dots"></i> What our clients say
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <i class="fas fa-quote-right"></i>
+          <p>"Finally a salon that doesn't make me choose between 'men's' or 'women's' — just great style."</p>
+          <div class="client"><i class="fas fa-user-circle"></i> Alex Rivera</div>
+        </div>
+        <div class="testimonial-card">
+          <i class="fas fa-quote-right"></i>
+          <p>"The balayage is stunning. They listened to exactly what I wanted — no assumptions."</p>
+          <div class="client"><i class="fas fa-user-circle"></i> Jordan Lee</div>
+        </div>
+        <div class="testimonial-card">
+          <i class="fas fa-quote-right"></i>
+          <p>"Best beard trim + facial I've ever had. The vibe is modern, clean, and welcoming."</p>
+          <div class="client"><i class="fas fa-user-circle"></i> Samir K.</div>
+        </div>
+        <div class="testimonial-card">
+          <i class="fas fa-quote-right"></i>
+          <p>"My teen felt so comfortable here. The stylist understood their non-binary identity."</p>
+          <div class="client"><i class="fas fa-user-circle"></i> Taylor M.</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h2>Luxe&Blade</h2>
+          <p>Unisex beauty parlor — where everyone is welcome to look and feel their best.</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#services"><i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i> Services</a></li>
+            <li><a href="#experience"><i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i> Experience</a></li>
+            <li><a href="#testimonials"><i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i> Reviews</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Visit</h4>
+          <ul>
+            <li><a href="#"><i class="fas fa-map-pin"></i> 221 Rainbow Ave, NY</a></li>
+            <li><a href="#"><i class="fas fa-phone-alt"></i> (555) 123-4567</a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i> hello@luxeblade.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2025 Luxe&Blade · Unisex beauty parlor. All identities celebrated.
+      </div>
+    </div>
+  </footer>
+
+  <!-- tiny interactive script for extra micro-interactions (smooth scroll fallback) -->
+  <script>
+    (function() {
+      // smooth scroll for all internal links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      // Add a small console greeting (optional)
+      console.log('✨ Luxe&Blade — interactive unisex beauty parlor UI ready.');
+    })();
+  </script>
+</body>
+</html>
