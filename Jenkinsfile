@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Code') {
-            steps {
-                git 'https://github.com/Ajaykumartanna/Docker-first-pipeline.git'
-            }
-        }
-
         stage('Docker Build') {
             steps {
                 sh 'docker build -t image1:latest .'
